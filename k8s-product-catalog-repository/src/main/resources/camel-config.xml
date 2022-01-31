@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+	   xmlns:cxf="http://camel.apache.org/schema/cxf"
+	   xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+	   http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+	   ">
+
+   <camelContext id="template" xmlns="http://camel.apache.org/schema/spring" >
+	    <camel:contextScan></camel:contextScan>
+		<camel:template id="templatePublish" camelContextId="template" />
+   </camelContext>
+   
+   <!-- <cxf:rsClient id="productCatalogService" address="/" 
+   serviceClass="org.apache.cxf.jaxrs.client.WebClient" inheritHeaders="true">
+		<cxf:headers>
+			<entry key="Content-Type" value="application/json" />
+		</cxf:headers>
+	</cxf:rsClient>  -->
+	
+	 <cxf:rsServer id="rsServer" address="/"
+	    serviceClass="org.apache.cxf.jaxrs.client.WebClient" 
+	    loggingFeatureEnabled="true" loggingSizeLimit="20">
+	    <cxf:providers>
+	       <ref bean="jsonProvider"/>
+	    </cxf:providers>
+	  </cxf:rsServer>
+<!-- 		
+	 <cxf:rsClient id="rsClient" address="/"
+	    serviceClass="org.apache.cxf.jaxrs.client.WebClient"
+    	loggingFeatureEnabled="true">
+	   
+	  </cxf:rsClient> -->
+		
+
+</beans>

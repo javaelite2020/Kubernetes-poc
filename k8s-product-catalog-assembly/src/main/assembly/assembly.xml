@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+	<id>k8s-product-catalog</id>
+	<formats>
+		<format>tar</format>
+	</formats>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<files>
+		<file>
+			<source>${pom.basedir}/../k8s-product-catalog-web/target/k8s-product-catalog-v1.war</source>
+			<destName>k8s-product-catalog-v1.war</destName>
+			<outputDirectory>.</outputDirectory>
+		</file>
+	</files>
+</assembly>

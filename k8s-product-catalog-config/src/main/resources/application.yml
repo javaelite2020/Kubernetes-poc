@@ -1,0 +1,7 @@
+api:
+    identifier: PRCA
+    name: k8s-product-catalog-v1
+    version: V1.0.0
+    properties: k8s-product-catalog-v1.properties
+    resource:
+      url: /k8s-product-catalog-v1		

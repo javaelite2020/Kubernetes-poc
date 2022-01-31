@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.css862.k8s</groupId>
+		<artifactId>k8s-product-catalog</artifactId>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>k8s-product-catalog-service</artifactId>
+	<packaging>jar</packaging>
+	<name>k8s-product-catalog-service</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+	</properties>
+
+	<!-- Dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>		
+			<artifactId>k8s-product-catalog-domain</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>		
+			<artifactId>k8s-product-catalog-repository</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>		
+			<artifactId>ehcache</artifactId>
+			<version>2.10.6</version>
+		</dependency>
+<!-- 		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency> -->
+		
+	</dependencies>
+	
+	
+	<!-- Build/Plugins -->
+	<build>
+	</build>
+</project>
